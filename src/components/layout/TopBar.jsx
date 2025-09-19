@@ -4,7 +4,6 @@ import BellIcon from "../../assets/topBarAssets/BellIcon.png";
 import DayIcon from "../../assets/topBarAssets/DayIcon.png";
 import HistoryIcon from "../../assets/topBarAssets/HistoryIcon.png";
 import ShortcutIcon from "../../assets/topBarAssets/ShortcutIcon.png";
-import SearchIcon from "../../assets/orderListAssets/SearchIcon.png";
 
 const TopBar = ({ path = "Dashboards / Default" }) => {
   return (

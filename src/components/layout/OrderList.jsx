@@ -123,16 +123,13 @@ const OrderList = () => {
         Order List
       </span>
 
-      {/* 🔹 Controls: Search + Filter + Sort */}
       <div className="flex justify-between items-center mb-4 bg-gray-50 p-2 rounded-lg mt-5">
         {/* Left Controls */}
         <div className="flex items-center gap-3">
-          {/* Filter by Status */}
             <button onClick={()=> {}} className="flex items-center gap-1 text-gray-700 hover:text-black">
                 <img className="w-7 h-7" src={PlusButton} alt="plusButton"/>
             </button>
 
-          {/* Sort by Date */}
           <button
             onClick={() => {}}
             className="flex items-center gap-1 text-gray-700 hover:text-black"
@@ -159,7 +156,7 @@ const OrderList = () => {
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value);
-              setCurrentPage(1); // reset to first page on search
+              setCurrentPage(1);
             }}
             className="border border-gray-300 rounded-lg px-4 py-1 text-sm w-48 focus:outline-none"
           />

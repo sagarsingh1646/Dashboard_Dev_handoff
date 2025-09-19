@@ -1,6 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-body {
-  font-family: 'Inter', sans-serif;
+@theme {
+  /* Define your custom font family */
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Define a custom text style */
+  --text-body: {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+  };
 }
