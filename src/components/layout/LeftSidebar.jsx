@@ -2,24 +2,27 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { sidebarLinks } from "../../data/sidebarLinks";
 import { ChevronRight, ChevronDown } from "lucide-react";
+import { useSelector } from "react-redux";
 
-const Sidebar = ({ userName, profilePhoto }) => {
+
+const LeftSidebar = ({ userName="ByeWind", profilePhoto }) => {
   const location = useLocation();
   const [openMenu, setOpenMenu] = useState(null);
+  const darkMode = useSelector((state) => state.theme.darkMode);
 
   const toggleMenu = (label) => {
     setOpenMenu(openMenu === label ? null : label);
   };
 
   return (
-    <div className="h-screen w-55 bg-white border-r border-gray-200 p-4">
+    <div className="w-55 h-100% dark:bg-[#1c1c1c] bg-white  text-white border-r border-gray-200 dark:border-gray-700 p-4">
       <div className="flex items-center gap-3 mb-6">
         <img
           src={profilePhoto}
           alt="Profile"
           className="w-10 h-10 rounded-full object-cover"
         />
-        <span className="font-inter font-normal text-sm leading-5 text-gray-900 truncate">
+        <span className="font-inter dark:text-white font-normal text-sm leading-5 text-gray-900 truncate">
           {userName}
         </span>
       </div>
@@ -27,11 +30,11 @@ const Sidebar = ({ userName, profilePhoto }) => {
       {/* Favorites Section */}
       <div>
         <div className="flex justify-between font-sans font-light text-base">
-          <span className="text-[rgba(28,28,28,0.4)]">Favorites</span>
-          <span className="px-10 text-[rgba(28,28,28,0.2)]">Recently</span>
+          <span className="dark:text-[#777777] text-[rgba(28,28,28,0.4)]">Favorites</span>
+          <span className="px-10 dark:text-[#494949] text-[rgba(28,28,28,0.2)]">Recently</span>
         </div>
         <div className="font-sans font-light text-sm">
-          <ul className="pt-2 list-disc marker:text-gray-400 pl-5 space-y-2">
+          <ul className="pt-2 text-black dark:text-white list-disc marker:text-gray-400 pl-5 space-y-2">
             <li>Overview</li>
             <li>Projects</li>
           </ul>
@@ -43,7 +46,7 @@ const Sidebar = ({ userName, profilePhoto }) => {
         {sidebarLinks.map((section, index) => (
           <div className="font-sans font-light" key={index}>
             {/* Section Title */}
-            <h2 className="text-sm leading-5 text-[rgba(28,28,28,0.4)] mb-2">
+            <h2 className="text-sm dark:text-[#777777]   leading-5 text-[rgba(28,28,28,0.4)] mb-2">
               {section.title}
             </h2>
 
@@ -58,7 +61,7 @@ const Sidebar = ({ userName, profilePhoto }) => {
                         onClick={() => toggleMenu(link.label)}
                         className={`w-full flex items-center gap-2 px-2 py-2 rounded-md text-sm transition-colors ${
                           openMenu === link.label
-                            ? "bg-gray-100 dark:bg-gray-100"
+                            ? "bg-gray-400 dark:bg-[#333333]"
                             : ""
                         }`}
                       >
@@ -72,10 +75,10 @@ const Sidebar = ({ userName, profilePhoto }) => {
                         </span>
 
                         {/* Menu Icon */}
-                        <img src={link.icon} alt="" className="w-4 h-4" />
+                        {!darkMode ? <img src={link.icon} alt="" className="w-4 h-4" /> : <img src={link.darkIcon} alt="" className="w-4 h-4" />  }
 
                         {/* Menu Name */}
-                        <span className="font-inter">{link.label}</span>
+                        <span className="font-sans text-black dark:text-white">{link.label}</span>
                       </button>
 
                       {/* Submenu */}
@@ -87,8 +90,8 @@ const Sidebar = ({ userName, profilePhoto }) => {
                                 to={child.path}
                                 className={`block px-2 py-1 text-sm rounded-md transition-colors ${
                                   location.pathname === child.path
-                                    ? "bg-gray-100 dark:bg-gray-100"
-                                    : "hover:bg-gray-100 dark:hover:bg-gray-100"
+                                    ? "bg-gray-100 dark:bg-[#333333]"
+                                    : "hover:bg-gray-100 dark:hover:bg-[#333333]"
                                 }`}
                               >
                                 {child.label}
@@ -126,4 +129,4 @@ const Sidebar = ({ userName, profilePhoto }) => {
   );
 };
 
-export default Sidebar;
+export default LeftSidebar;

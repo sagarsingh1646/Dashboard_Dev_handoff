@@ -119,11 +119,11 @@ const OrderList = () => {
 
   return (
     <div className="p-4 w-full">
-      <span className="font-semibold" >
+      <span className="font-semibold dark:text-white" >
         Order List
       </span>
 
-      <div className="flex justify-between items-center mb-4 bg-gray-50 p-2 rounded-lg mt-5">
+      <div className="flex justify-between items-center mb-4 bg-gray-50 dark:bg-[#272727] p-2 rounded-lg mt-5">
         {/* Left Controls */}
         <div className="flex items-center gap-3">
             <button onClick={()=> {}} className="flex items-center gap-1 text-gray-700 hover:text-black">
@@ -166,12 +166,12 @@ const OrderList = () => {
       {/* Table */}
       <div className="overflow-x-auto">
         <table
-          className="table-fixed w-full bg-white rounded-lg"
+          className="table-fixed w-full bg-white dark:bg-[#1C1C1C] rounded-lg"
           style={orderFontStyle}
         >
           <thead>
             <tr className="border-b border-gray-400">
-              <th className="w-12 px-4 py-3 text-left">
+              <th className="w-5 px-4 py-3 text-left">
                 <input
                   type="checkbox"
                   checked={
@@ -179,25 +179,25 @@ const OrderList = () => {
                     currentOrders.length > 0
                   }
                   onChange={toggleAllCheckboxes}
-                  className="w-4 h-4 accent-black"
+                  className="w-4 h-4 accent-black dark:accent-[#C6C7F8]"
                 />
               </th>
-              <th className="w-[120px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="w-[100px] px-4 py-3 text-left text-gray-400 font-light">
                 Order ID
               </th>
-              <th className="w-[220px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="min-w-[150px] px-4 py-3 text-left text-gray-400 font-light">
                 User
               </th>
-              <th className="min-w-[150px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="min-w-[180px] px-4 py-3 text-left text-gray-400 font-light">
                 Project
               </th>
               <th className="min-w-[80px] max-w-[400px] px-4 py-3 text-left text-gray-400 font-light">
                 Address
               </th>
-              <th className="w-[140px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="w-[120px] px-4 py-3 text-left text-gray-400 font-light">
                 Date
               </th>
-              <th className="w-[160px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="w-[120px] px-4 py-3 text-left text-gray-400 font-light">
                 Status
               </th>
               <th className="w-12 px-4 py-3 text-right"></th>
@@ -211,7 +211,7 @@ const OrderList = () => {
               return (
                 <tr
                   key={order.id}
-                  className="border-b border-gray-200 hover:bg-gray-50 group"
+                  className="border-b border-gray-200 dark:border-[#333333] hover:bg-gray-50 dark:hover:bg-[#272727] group"
                   style={orderFontStyle}
                 >
                   <td className="px-4 py-2">
@@ -219,25 +219,25 @@ const OrderList = () => {
                       type="checkbox"
                       checked={isChecked}
                       onChange={() => toggleCheckbox(order.id)}
-                      className={`w-4 h-4 accent-black transition-opacity duration-200 ${
+                      className={`w-4 h-4 accent-black dark:accent-[#C6C7F8] transition-opacity duration-200 ${
                         isChecked ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                       }`}
                     />
                   </td>
-                  <td className="px-4 py-2 font-medium">{order.id}</td>
+                  <td className="px-4 py-2 font-medium dark:text-white">{order.id}</td>
                   <td className="px-4 py-2 flex items-center gap-2 w-[220px] min-w-[80px] max-w-[220px]">
                     <img
                       src={order.user.avatar}
                       alt={order.user.name}
                       className="w-6 h-6 rounded-full"
                     />
-                    <span className="truncate">{order.user.name}</span>
+                    <span className="truncate dark:text-white">{order.user.name}</span>
                   </td>
-                  <td className="px-4 py-1 truncate">{order.project}</td>
-                  <td className="px-4 py-1 min-h-[40px] min-w-[80px] max-w-[400px] truncate">
+                  <td className="px-4 py-1 truncate dark:text-white">{order.project}</td>
+                  <td className="px-4 py-1 min-h-[40px] min-w-[80px] max-w-[400px] truncate dark:text-white">
                     {order.address}
                   </td>
-                  <td className="px-4 py-1 text-gray-600">{order.date}</td>
+                  <td className="px-4 py-1 text-gray-600 dark:text-white">{order.date}</td>
                   <td className="px-4 py-1 font-medium">
                     <div className="flex items-center gap-2">
                       <span className={`${statusColors[order.status]}`}>●</span>
@@ -245,7 +245,7 @@ const OrderList = () => {
                     </div>
                   </td>
                   <td className="px-4 py-1 text-right">
-                    <button className="p-2 rounded-lg hover:bg-gray-100 transition">
+                    <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#272727] transition">
                       <span className="text-gray-600">⋯</span>
                     </button>
                   </td>
@@ -261,7 +261,7 @@ const OrderList = () => {
             <button
               onClick={goToPreviousPage}
               disabled={currentPage === 1}
-              className={`px-2 py-1 text-gray-600 hover:bg-gray-100 rounded ${
+              className={`px-2 py-1 text-gray-600 hover:bg-gray-100 dark:bg-[#272727] rounded ${
                 currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >
@@ -272,10 +272,10 @@ const OrderList = () => {
               <button
                 key={index + 1}
                 onClick={() => goToPage(index + 1)}
-                className={`px-3 py-1 rounded-lg transition ${
+                className={`px-3 py-1 rounded-lg transition dark:text-white ${
                   currentPage === index + 1
-                    ? "bg-gray-100 text-black"
-                    : "text-gray-800 hover:bg-gray-100"
+                    ? "bg-gray-100 text-black dark:bg-[#272727]"
+                    : "text-gray-800 hover:bg-gray-100 dark:hover:bg-[#272727]"
                 }`}
               >
                 {index + 1}
@@ -285,7 +285,7 @@ const OrderList = () => {
             <button
               onClick={goToNextPage}
               disabled={currentPage === totalPages}
-              className={`px-2 py-1 text-gray-600 hover:bg-gray-100 rounded ${
+              className={`px-2 py-1 text-gray-600  hover:bg-gray-100 dark:hover:bg-[#272727] rounded ${
                 currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >

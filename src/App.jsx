@@ -1,28 +1,41 @@
-import Sidebar from "./components/layout/Sidebar"
-import Dashboard from "./pages/Dashboard"
-import { User } from './data/userData';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LeftSidebar from "./components/layout/LeftSidebar";
+import Dashboard from "./pages/Dashboard";
 import OrderList from "./components/layout/orderList";
 import TopBar from "./components/layout/TopBar";
+import { User } from "./data/userData";
+import RightSidebar from "./components/layout/RightSideBar"
 
 function App() {
-
-
   return (
-    <>
-    {/* <Dashboard/> */}
-    <div className="flex">
-          <Sidebar
-      userName={User.userName}
+    <Router>
+      <div className="flex">
+        {/* Left Sidebar */}
+            <LeftSidebar
+      userName={User.name}
       profilePhoto={User.profilePhoto}
     />
-    
-    <div>
-    <TopBar/>
-    <OrderList/>
-    </div>
-    </div>
-    </>
-  )
+
+        {/* Main Content Area */}
+        <div className="flex-1 dark:bg-[#1c1c1c] bg-white">
+          {/* Top Bar */}
+          <TopBar />
+
+          {/* Pages */}
+          <div className="p-4 overflow-auto ">
+            <Routes>
+              <Route path="/home" element={<Dashboard />} />
+              <Route path="/order" element={<OrderList />} />
+              <Route path="*" element={<Dashboard />} /> 
+            </Routes>
+          </div>
+        </div>
+
+        {/* Right Sidebar */}
+        <RightSidebar />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
