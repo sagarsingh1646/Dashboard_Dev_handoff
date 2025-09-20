@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LeftSidebar from "./components/layout/LeftSidebar";
 import Dashboard from "./pages/Dashboard";
-import OrderList from "./components/layout/orderList";
+import OrderList from "./components/layout/OrderList";
 import TopBar from "./components/layout/TopBar";
 import { User } from "./data/userData";
 import RightSidebar from "./components/layout/RightSideBar"
