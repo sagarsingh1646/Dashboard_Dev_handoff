@@ -1,8 +1,10 @@
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const TotalSalesCard = ({ data }) => {
-  const [activeIndex, setActiveIndex] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(null);
+    const darkMode = useSelector((state) => state.theme.darkMode);
 
   const totalValue = data.reduce((acc, cur) => acc + cur.value, 0);
 
@@ -11,8 +13,8 @@ const TotalSalesCard = ({ data }) => {
   };
 
   return (
-    <div className="bg-[#F7F9FB] w-70 dark:bg-gray-800 p-4 rounded-2xl">
-      <h2 className="text-lg font-semibold mb-4">Total Sales</h2>
+    <div className="bg-[#F7F9FB] w-70 dark:bg-[#272727] p-4 rounded-2xl">
+      <h2 className="text-lg font-semibold mb-4 dark:text-white">Total Sales</h2>
       <ResponsiveContainer width="100%" height={220}>
         <PieChart>
           <Pie
@@ -65,9 +67,9 @@ const TotalSalesCard = ({ data }) => {
                 className="rounded-full w-3 h-3 inline-block"
                 style={{ backgroundColor: item.color }}
               />
-              <span className="font-light font-sans pl-3">{item.name}</span>
+              <span className="font-light font-sans pl-3 dark:text-white">{item.name}</span>
             </span>
-            <span className="font-light font-sans">
+            <span className="font-light font-sans dark:text-white">
               ${item.value.toFixed(2)}
             </span>
           </li>

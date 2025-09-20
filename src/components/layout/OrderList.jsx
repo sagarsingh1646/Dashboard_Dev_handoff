@@ -5,6 +5,13 @@ import FunnelSimple from "../../assets/orderListAssets/FunnelSimple.png"
 import PlusButton from "../../assets/orderListAssets/PlusButton.png"
 import SearchIcon from "../../assets/orderListAssets/SearchIcon.png"
 
+// Dark Icons
+import ArrowsDownUpDark from "../../assets/orderListAssetsDark/ArrowsDownUpDark.png"
+import FunnelSimpleDark from "../../assets/orderListAssetsDark/FunnelSimpleDark.png"
+import PlusButtonDark from "../../assets/orderListAssetsDark/PlusButtonDark.png"
+import SearchIconDark from "../../assets/orderListAssetsDark/SearchIconDark.png"
+import { useSelector } from "react-redux";
+
 
 const statusColors = {
   "In Progress": "text-[#8A8CD9]",
@@ -30,6 +37,8 @@ const OrderList = () => {
   const [statusFilter, setStatusFilter] = useState("All");
   const [sortField, setSortField] = useState(null);
   const [sortOrder, setSortOrder] = useState("asc");
+
+  const darkMode = useSelector((state) => state.theme.darkMode);
 
   const ordersPerPage = 10;
 
@@ -127,14 +136,14 @@ const OrderList = () => {
         {/* Left Controls */}
         <div className="flex items-center gap-3">
             <button onClick={()=> {}} className="flex items-center gap-1 text-gray-700 hover:text-black">
-                <img className="w-7 h-7" src={PlusButton} alt="plusButton"/>
+                {!darkMode? <img className="w-7 h-7" src={PlusButton} alt="plusButton"/> : <img className="w-7 h-7" src={PlusButtonDark} alt="plusButton"/>}
             </button>
 
           <button
             onClick={() => {}}
             className="flex items-center gap-1 text-gray-700 hover:text-black"
           >
-          <img className="w-5 h-5" src={FunnelSimple} alt="funnel"/>
+          {!darkMode? <img className="w-5 h-5" src={FunnelSimple} alt="funnel"/> : <img className="w-5 h-5" src={FunnelSimpleDark} alt="funnel"/>}
           </button>
 
           {/* Sort by Status */}
@@ -143,13 +152,13 @@ const OrderList = () => {
             className="flex items-center gap-1 text-gray-700 hover:text-black"
           >
 
-            <img className="w-5 h-5" src={ArrowsDownUp} alt="arrow"/>
+            {!darkMode? <img className="w-5 h-5" src={ArrowsDownUp} alt="arrow"/> : <img className="w-5 h-5" src={ArrowsDownUpDark} alt="arrow"/>}
           </button>
         </div>
 
         {/* Search Bar */}
         <div className="relative">
-        <img className="w-5 h-5 absolute right-3 top-1.5" src={SearchIcon} alt="SearchIcon"/>
+          {!darkMode?         <img className="w-5 h-5 absolute right-3 top-1.5" src={SearchIcon} alt="SearchIcon"/> :         <img className="w-5 h-5 absolute right-3 top-1.5" src={SearchIconDark} alt="SearchIcon"/>}
           <input
             type="text"
             placeholder="Search"
@@ -158,7 +167,7 @@ const OrderList = () => {
               setSearchQuery(e.target.value);
               setCurrentPage(1);
             }}
-            className="border border-gray-300 rounded-lg px-4 py-1 text-sm w-48 focus:outline-none"
+            className="border dark:text-[#4F4F4F] dark:bg-[#232323] dark:border-[#393939] border-gray-300 rounded-lg px-4 py-1 text-sm w-48 focus:outline-none"
           />
         </div>
       </div>
@@ -182,22 +191,22 @@ const OrderList = () => {
                   className="w-4 h-4 accent-black dark:accent-[#C6C7F8]"
                 />
               </th>
-              <th className="w-[100px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="w-[100px] px-4 py-3 text-left text-gray-400 dark:text-[#777777] font-light">
                 Order ID
               </th>
-              <th className="min-w-[150px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="min-w-[150px] px-4 py-3 text-left text-gray-400 dark:text-[#777777]  font-light">
                 User
               </th>
-              <th className="min-w-[180px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="min-w-[180px] px-4 py-3 text-left text-gray-400 dark:text-[#777777]  font-light">
                 Project
               </th>
-              <th className="min-w-[80px] max-w-[400px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="min-w-[80px] max-w-[400px] px-4 py-3 text-left text-gray-400 dark:text-[#777777]  font-light">
                 Address
               </th>
-              <th className="w-[120px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="w-[120px] px-4 py-3 text-left text-gray-400 dark:text-[#777777]  font-light">
                 Date
               </th>
-              <th className="w-[120px] px-4 py-3 text-left text-gray-400 font-light">
+              <th className="w-[120px] px-4 py-3 text-left text-gray-400 dark:text-[#777777]  font-light">
                 Status
               </th>
               <th className="w-12 px-4 py-3 text-right"></th>

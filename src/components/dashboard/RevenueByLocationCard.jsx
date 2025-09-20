@@ -1,10 +1,10 @@
 const RevenueByLocationCard = ({ data }) => {
   return (
-    <div className="bg-[#F7F9FB] h-100 w-70 dark:bg-gray-800 p-4 rounded-2xl ">
-      <h2 className="text-lg font-semibold mb-4">Revenue by Location</h2>
+    <div className="bg-[#F7F9FB] h-100 w-70 dark:bg-[#272727] p-4 rounded-2xl ">
+      <h2 className="text-lg font-semibold mb-4 dark:text-white">Revenue by Location</h2>
       <ul>
         {data.map((location, index) => (
-          <li key={index} className="flex justify-between py-2 text-sm">
+          <li key={index} className="flex justify-between py-2 text-sm dark:text-white">
             <span>{location.city}</span>
             <span>{location.value.toLocaleString()}K</span>
           </li>

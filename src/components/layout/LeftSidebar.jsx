@@ -61,7 +61,7 @@ const LeftSidebar = ({ userName="ByeWind", profilePhoto }) => {
                         onClick={() => toggleMenu(link.label)}
                         className={`w-full flex items-center gap-2 px-2 py-2 rounded-md text-sm transition-colors ${
                           openMenu === link.label
-                            ? "bg-gray-400 dark:bg-[#333333]"
+                            ? "bg-gray-100 dark:bg-[#333333]"
                             : ""
                         }`}
                       >
@@ -88,7 +88,7 @@ const LeftSidebar = ({ userName="ByeWind", profilePhoto }) => {
                             <li key={childIdx}>
                               <Link
                                 to={child.path}
-                                className={`block px-2 py-1 text-sm rounded-md transition-colors ${
+                                className={`block px-2 py-1 text-sm rounded-md text-black transition-colors ${
                                   location.pathname === child.path
                                     ? "bg-gray-100 dark:bg-[#333333]"
                                     : "hover:bg-gray-100 dark:hover:bg-[#333333]"

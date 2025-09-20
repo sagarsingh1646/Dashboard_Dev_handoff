@@ -1,9 +1,9 @@
 // src/data/ecommerceData.js
 export const insightData = [
-  { title: "Customers", value: "3,781", percentage: "+11.01%", isUp: true },
-  { title: "Orders", value: "1,219", percentage: "-0.03%", isUp: false },
-  { title: "Revenue", value: "$695", percentage: "+15.03%", isUp: true },
-  { title: "Growth", value: "30.1%", percentage: "+6.08%", isUp: true },
+  { title: "Customers", value: "3,781", percentage: "+11.01%", isUp: true, bgColor: "bg-[#E3F5FF]", darkColor: "bg-[#E3F5FF]" },
+  { title: "Orders", value: "1,219", percentage: "-0.03%", isUp: false, bgColor: "bg-[#F7F9FB]", darkColor: "bg-[#272727]" },
+  { title: "Revenue", value: "$695", percentage: "+15.03%", isUp: true, bgColor: "bg-[#F7F9FB]", darkColor: "bg-[#272727]" },
+  { title: "Growth", value: "30.1%", percentage: "+6.08%", isUp: true, bgColor: "bg-[#E5ECF6]", darkColor: "bg-[#E5ECF6]" },
 ];
 
 // export const projectionsData = [

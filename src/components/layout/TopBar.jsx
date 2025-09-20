@@ -16,14 +16,14 @@ import StarIconDark from "../../assets/topBarAssetsDark/StarIconDark.png";
 import BellIconDark from "../../assets/topBarAssetsDark/BellIconDark.png";
 import DayIconDark from "../../assets/topBarAssetsDark/DayIconDark.png";
 import HistoryIconDark from "../../assets/topBarAssetsDark/HistoryIconDark.png";
-// import ShortcutIconDark from "../../assets/topBarAssetsDark/ShortcutIconDark.png";
+import ShortcutIconDark from "../../assets/topBarAssetsDark/ShortcutIconDark.png";
 
 const TopBar = ({ path = "Dashboards / Default" }) => {
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.theme.darkMode);
-  console.log(darkMode)
+  console.log(darkMode);
 
-  // Add/remove "dark" class on <html> whenever darkMode changes
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -34,14 +34,21 @@ const TopBar = ({ path = "Dashboards / Default" }) => {
 
   return (
     <div className="flex justify-between h-16 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1C1C1C]">
-      
       {/* Left side */}
       <div className="flex pl-4 gap-3">
         <button>
-          {!darkMode? <img className="w-7 h-7" src={SlideBarIcon} /> : <img className="w-7 h-7" src={SideBarIconDark} />}
+          {!darkMode ? (
+            <img className="w-7 h-7" src={SlideBarIcon} />
+          ) : (
+            <img className="w-7 h-7" src={SideBarIconDark} />
+          )}
         </button>
         <button>
-          {!darkMode? <img className="w-7 h-7" src={StarIcon} /> : <img className="w-7 h-7" src={StarIconDark} />}
+          {!darkMode ? (
+            <img className="w-7 h-7" src={StarIcon} />
+          ) : (
+            <img className="w-7 h-7" src={StarIconDark} />
+          )}
         </button>
         <span className="pl-4 py-5 font-light text-gray-800 dark:text-gray-100">
           {path}
@@ -51,31 +58,55 @@ const TopBar = ({ path = "Dashboards / Default" }) => {
       {/* Right side */}
       <div className="flex items-center gap-4 pr-4">
         <div className="relative">
-          <img
-            className="w-5 h-5 absolute right-3 top-1.5"
-            src={ShortcutIcon}
-            alt="SearchIcon"
-          />
+          {!darkMode ? (
+            <img
+              className="w-5 h-5 absolute right-3 top-1.5"
+              src={ShortcutIcon}
+              alt="SearchIcon"
+            />
+          ) : (
+            <img
+              className="w-5 h-5 absolute right-3 top-1.5"
+              src={ShortcutIconDark}
+              alt="SearchIcon"
+            />
+          )}
           <input
             type="text"
             placeholder="Search"
-            className="border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-1 text-sm w-38 focus:outline-none text-gray-800 dark:text-gray-100"
+            className="border dark:border-0 border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-[#333333] dark:text-[#5C5C5C] rounded-lg px-4 py-1 text-sm w-38 focus:outline-none text-gray-800"
           />
         </div>
 
         {/* Day / Night toggle button */}
         <button onClick={() => dispatch(toggleDarkMode())}>
-          {!darkMode? <img className="w-7 h-7" src={DayIcon} alt="Toggle Dark Mode" /> : <img className="w-7 h-7" src={DayIconDark} alt="Toggle Dark Mode" />}
+          {!darkMode ? (
+            <img className="w-7 h-7" src={DayIcon} alt="Toggle Dark Mode" />
+          ) : (
+            <img className="w-7 h-7" src={DayIconDark} alt="Toggle Dark Mode" />
+          )}
         </button>
 
         <button>
-          {!darkMode? <img className="ml-3 w-7 h-7" src={HistoryIcon} /> : <img className="ml-3 w-7 h-7" src={HistoryIconDark} />}
+          {!darkMode ? (
+            <img className="ml-3 w-7 h-7" src={HistoryIcon} />
+          ) : (
+            <img className="ml-3 w-7 h-7" src={HistoryIconDark} />
+          )}
         </button>
         <button>
-          {!darkMode? <img className="ml-3 h-7" src={BellIcon} /> : <img className="ml-3 h-7" src={BellIconDark} />}
+          {!darkMode ? (
+            <img className="ml-3 h-7" src={BellIcon} />
+          ) : (
+            <img className="ml-3 h-7" src={BellIconDark} />
+          )}
         </button>
         <button>
-          {!darkMode? <img className="ml-3 h-7" src={SlideBarIcon} /> : <img className="ml-3 h-7" src={SideBarIconDark} />}
+          {!darkMode ? (
+            <img className="ml-3 h-7" src={SlideBarIcon} />
+          ) : (
+            <img className="ml-3 h-7" src={SideBarIconDark} />
+          )}
         </button>
       </div>
     </div>
