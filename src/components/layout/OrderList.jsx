@@ -188,7 +188,7 @@ const OrderList = () => {
                     currentOrders.length > 0
                   }
                   onChange={toggleAllCheckboxes}
-                  className="w-4 h-4 accent-black dark:accent-[#C6C7F8]"
+                  className="w-4 h-4  accent-black dark:accent-[#C6C7F8]"
                 />
               </th>
               <th className="w-[100px] px-4 py-3 text-left text-gray-400 dark:text-[#777777] font-light">
