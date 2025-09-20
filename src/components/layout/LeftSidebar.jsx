@@ -88,7 +88,7 @@ const LeftSidebar = ({ userName="ByeWind", profilePhoto }) => {
                             <li key={childIdx}>
                               <Link
                                 to={child.path}
-                                className={`block px-2 py-1 text-sm rounded-md text-black transition-colors ${
+                                className={`block px-2 py-1 text-sm rounded-md text-black dark:text-white transition-colors ${
                                   location.pathname === child.path
                                     ? "bg-gray-100 dark:bg-[#333333]"
                                     : "hover:bg-gray-100 dark:hover:bg-[#333333]"

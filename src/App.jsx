@@ -5,8 +5,10 @@ import OrderList from "./components/layout/orderList";
 import TopBar from "./components/layout/TopBar";
 import { User } from "./data/userData";
 import RightSidebar from "./components/layout/RightSideBar"
+import { useSelector } from "react-redux";
 
 function App() {
+const isOpen = useSelector((state) => state.rightSidebar.isOpen);
   return (
     <Router>
       <div className="flex">
@@ -32,7 +34,9 @@ function App() {
         </div>
 
         {/* Right Sidebar */}
-        <RightSidebar />
+        {isOpen? 
+        <RightSidebar/> : <></>
+        }
       </div>
     </Router>
   );

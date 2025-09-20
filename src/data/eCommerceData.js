@@ -35,10 +35,10 @@ export const revenueGraphData = [
 ];
 
 export const revenueByLocationData = [
-  { city: "New York", value: 72000 },
-  { city: "San Francisco", value: 39000 },
-  { city: "Sydney", value: 25000 },
-  { city: "Singapore", value: 61000 },
+  { city: "New York", value: 72 },
+  { city: "San Francisco", value: 39 },
+  { city: "Sydney", value: 25 },
+  { city: "Singapore", value: 61 },
 ];
 
 export const topSellingProductsData = [

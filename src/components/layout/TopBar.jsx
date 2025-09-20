@@ -17,6 +17,7 @@ import BellIconDark from "../../assets/topBarAssetsDark/BellIconDark.png";
 import DayIconDark from "../../assets/topBarAssetsDark/DayIconDark.png";
 import HistoryIconDark from "../../assets/topBarAssetsDark/HistoryIconDark.png";
 import ShortcutIconDark from "../../assets/topBarAssetsDark/ShortcutIconDark.png";
+import { toggleRightSidebar } from "../../features/rightSideBarSlice";
 
 const TopBar = ({ path = "Dashboards / Default" }) => {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const TopBar = ({ path = "Dashboards / Default" }) => {
     <div className="flex justify-between h-16 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1C1C1C]">
       {/* Left side */}
       <div className="flex pl-4 gap-3">
-        <button>
+        <button className="">
           {!darkMode ? (
             <img className="w-7 h-7" src={SlideBarIcon} />
           ) : (
@@ -79,7 +80,7 @@ const TopBar = ({ path = "Dashboards / Default" }) => {
         </div>
 
         {/* Day / Night toggle button */}
-        <button onClick={() => dispatch(toggleDarkMode())}>
+        <button className="cursor-pointer" onClick={() => dispatch(toggleDarkMode())}>
           {!darkMode ? (
             <img className="w-7 h-7" src={DayIcon} alt="Toggle Dark Mode" />
           ) : (
@@ -101,7 +102,7 @@ const TopBar = ({ path = "Dashboards / Default" }) => {
             <img className="ml-3 h-7" src={BellIconDark} />
           )}
         </button>
-        <button>
+        <button className="cursor-pointer" onClick={() => dispatch(toggleRightSidebar())}>
           {!darkMode ? (
             <img className="ml-3 h-7" src={SlideBarIcon} />
           ) : (
