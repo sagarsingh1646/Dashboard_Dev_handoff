@@ -1,4 +1,3 @@
-import React from "react";
 import {
   BarChart,
   Bar,
@@ -37,13 +36,15 @@ const ProjectionCard = ({ data }) => {
             tick={{ fill: "#9CA3AF", fontSize: 12 }}
             axisLine={false}
             tickLine={false}
-            domain={[0, 30]}
+            domain={[0, 30]}                         // Y range from 0 to 30
+            ticks={[0, 10, 20, 30]}                  // Custom ticks
           />
 
           {/* Tooltip */}
           <Tooltip
             cursor={{ fill: "rgba(0,0,0,0.05)" }}
             contentStyle={{ borderRadius: "10px", fontSize: "12px" }}
+            formatter={(value) => `${value}M`}       // Show tooltip in M
           />
 
           {/* Actuals Bar (Bottom Layer) */}
