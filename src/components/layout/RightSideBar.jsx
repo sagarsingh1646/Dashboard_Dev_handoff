@@ -3,7 +3,7 @@ import { notifications, activities, contacts } from "../../data/righSidebarData"
 
 const RightSideBar = () => {
   return (
-    <div className="w-75 h-100% p-6 bg-white dark:bg-[#1C1C1C] border-l border-gray-200 dark:border-gray-700 space-y-8">
+    <div className="w-75 min-h-screen p-6 bg-white dark:bg-[#1C1C1C] border-l border-gray-200 dark:border-gray-700 space-y-8">
       {/* Notifications */}
       <div>
         <h2 className="text-lg font-sans text-gray-900 dark:text-white mb-4">

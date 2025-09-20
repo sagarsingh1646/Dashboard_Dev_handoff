@@ -15,7 +15,7 @@ const LeftSidebar = ({ userName="ByeWind", profilePhoto }) => {
   };
 
   return (
-    <div className="w-55 h-100% dark:bg-[#1c1c1c] bg-white  text-white border-r border-gray-200 dark:border-gray-700 p-4">
+    <div className="w-55 min-h-screen dark:bg-[#1c1c1c] bg-white  text-white border-r border-gray-200 dark:border-gray-700 p-4">
       <div className="flex items-center gap-3 mb-6">
         <img
           src={profilePhoto}
