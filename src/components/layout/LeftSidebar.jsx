@@ -114,7 +114,7 @@ const LeftSidebar = ({ userName="ByeWind", profilePhoto }) => {
                           : "hover:bg-gray-100 dark:hover:bg-gray-800"
                       }`}
                     >
-                      {/* No arrow for normal links */}
+                      {/* No arrow for normal links without child */}
                       <img src={link.icon} alt="" className="w-4 h-4" />
                       <span className="font-inter">{link.label}</span>
                     </Link>

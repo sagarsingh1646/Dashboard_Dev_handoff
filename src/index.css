@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  /* Define your custom font family */
+  /*custom font family */
   --font-sans: "Inter", system-ui, sans-serif;
 
-  /* Define a custom text style */
+  /*custom text style */
   --text-body: {
     font-family: var(--font-sans);
     font-weight: 400;

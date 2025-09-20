@@ -1,4 +1,3 @@
-import React from "react";
 import { notifications, activities, contacts } from "../../data/righSidebarData";
 
 const RightSideBar = () => {

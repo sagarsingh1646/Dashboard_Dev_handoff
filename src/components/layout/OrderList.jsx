@@ -1,5 +1,7 @@
 import React, { useState, useMemo } from "react";
 import orderData from "../../data/order";
+
+//Light Icons
 import ArrowsDownUp from "../../assets/orderListAssets/ArrowsDownUp.png"
 import FunnelSimple from "../../assets/orderListAssets/FunnelSimple.png"
 import PlusButton from "../../assets/orderListAssets/PlusButton.png"
@@ -42,7 +44,7 @@ const OrderList = () => {
 
   const ordersPerPage = 10;
 
-  /** 🔹 Filtering & Searching */
+  /*Filtering & Searching */
   const filteredOrders = useMemo(() => {
     return orderData.filter((order) => {
       const matchesSearch =
@@ -57,7 +59,7 @@ const OrderList = () => {
     });
   }, [orderData, searchQuery, statusFilter]);
 
-  /** 🔹 Sorting */
+  /*Sorting */
   const sortedOrders = useMemo(() => {
     const sorted = [...filteredOrders];
     if (sortField) {
@@ -65,7 +67,6 @@ const OrderList = () => {
         let valueA = a[sortField];
         let valueB = b[sortField];
 
-        // Special handling for dates
         if (sortField === "date") {
           valueA = new Date(a.date);
           valueB = new Date(b.date);
@@ -78,13 +79,13 @@ const OrderList = () => {
     return sorted;
   }, [filteredOrders, sortField, sortOrder]);
 
-  /** 🔹 Pagination */
+  /*Pagination */
   const totalPages = Math.ceil(sortedOrders.length / ordersPerPage);
   const indexOfLastOrder = currentPage * ordersPerPage;
   const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
   const currentOrders = sortedOrders.slice(indexOfFirstOrder, indexOfLastOrder);
 
-  /** Toggle checkbox for each order */
+  /*Toggle checkbox for each order */
   const toggleCheckbox = (id) => {
     setSelectedOrders((prev) =>
       prev.includes(id)
@@ -93,7 +94,7 @@ const OrderList = () => {
     );
   };
 
-  /** Select/Deselect all on current page */
+  /*Select/Deselect all on current page */
   const toggleAllCheckboxes = () => {
     if (selectedOrders.length === currentOrders.length) {
       setSelectedOrders([]);
@@ -102,7 +103,7 @@ const OrderList = () => {
     }
   };
 
-  /** Pagination Controls */
+  /*Pagination Controls */
   const goToPage = (pageNumber) => {
     setCurrentPage(pageNumber);
     setSelectedOrders([]);
@@ -116,7 +117,7 @@ const OrderList = () => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
   };
 
-  /** Handle Sort Toggle */
+  /*Handle Sort Toggle */
   const handleSort = (field) => {
     if (sortField === field) {
       setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));

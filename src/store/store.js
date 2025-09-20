@@ -4,7 +4,7 @@ import rightSideBarReducer from "../features/rightSideBarSlice";
 
 export const store = configureStore({
   reducer: {
-    theme: themeReducer, // dark mode state
+    theme: themeReducer,
     rightSidebar: rightSideBarReducer,
   },
 });

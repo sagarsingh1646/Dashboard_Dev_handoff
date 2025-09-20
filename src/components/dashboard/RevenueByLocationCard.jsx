@@ -7,7 +7,7 @@ import WorldMapDark from "../../assets/eCommerceAssetsDark/WorldMapDark.png";
 const RevenueByLocationCard = ({ data }) => {
   const darkMode = useSelector((state) => state.theme.darkMode);
 
-  // Find the maximum value to calculate percentage
+  //maximum value to calculate percentage
   const maxValue = 100;
 
   return (
@@ -36,7 +36,7 @@ const RevenueByLocationCard = ({ data }) => {
                 {/* Progress Bar */}
                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1">
                   <div
-                    className="bg-[#A8C5DB] h-1 rounded-full transition-all duration-500"
+                    className="bg-[#A8C5DB] dark: h-1 rounded-full transition-all duration-500"
                     style={{ width: `${percentage}%` }}
                   ></div>
                 </div>

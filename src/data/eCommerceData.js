@@ -1,4 +1,3 @@
-// src/data/ecommerceData.js
 export const insightData = [
   { title: "Customers", value: "3,781", percentage: "+11.01%", isUp: true, bgColor: "bg-[#E3F5FF]", darkColor: "bg-[#E3F5FF]" },
   { title: "Orders", value: "1,219", percentage: "-0.03%", isUp: false, bgColor: "bg-[#F7F9FB]", darkColor: "bg-[#272727]" },

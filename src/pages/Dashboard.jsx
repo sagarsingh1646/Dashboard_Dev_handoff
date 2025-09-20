@@ -9,10 +9,7 @@ import RightSideBar from '../components/layout/RightSideBar';
 export default function Dashboard() {
   return (
     <div className=''>
-
-
     <Ecommerce/>
-
     </div>
   );
 }
