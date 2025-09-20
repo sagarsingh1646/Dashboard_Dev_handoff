@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../../features/themeSlice";
 
 //Light Icon
-import SlideBarIcon from "../../assets/topBarAssets/SlidebarIcon.png";
+import SlideBarIcon from "../../assets/topBarAssets/SlideBarIcon.png";
 import StarIcon from "../../assets/topBarAssets/StarIcon.png";
 import BellIcon from "../../assets/topBarAssets/BellIcon.png";
 import DayIcon from "../../assets/topBarAssets/DayIcon.png";
@@ -11,7 +11,7 @@ import HistoryIcon from "../../assets/topBarAssets/HistoryIcon.png";
 import ShortcutIcon from "../../assets/topBarAssets/ShortcutIcon.png";
 
 //Dark Icon
-import SideBarIconDark from "../../assets/topBarAssetsDark/SidebarIconDark.png";
+import SideBarIconDark from "../../assets/topBarAssetsDark/SideBarIconDark.png";
 import StarIconDark from "../../assets/topBarAssetsDark/StarIconDark.png";
 import BellIconDark from "../../assets/topBarAssetsDark/BellIconDark.png";
 import DayIconDark from "../../assets/topBarAssetsDark/DayIconDark.png";
