@@ -21,6 +21,7 @@ This is a **Vite + React** dashboard application with a light/dark theme toggle,
 
 ## Prerequisites
 
+- Internet connection is required as some of the profile photos are being fetched from randomuser.me.
 - [Node.js](https://nodejs.org/) (v18+ recommended)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
