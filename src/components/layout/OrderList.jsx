@@ -176,7 +176,7 @@ const OrderList = () => {
       {/* Table */}
       <div className="overflow-x-auto">
         <table
-          className="table-fixed w-full bg-white dark:bg-[#1C1C1C] rounded-lg"
+          className="table-fixed w-full bg-white dark:bg-dark rounded-lg"
           style={orderFontStyle}
         >
           <thead>

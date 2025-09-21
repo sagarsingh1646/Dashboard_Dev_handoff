@@ -16,7 +16,7 @@ import {
 
 const Ecommerce = () => {
   return (
-    <div className="dark:bg-[#1c1c1c] bg-white">
+    <div className="dark:bg-dark bg-white">
     <div>
       <span className="font-sans dark:text-white text-black">eCommerce</span>
     </div>

@@ -16,7 +16,7 @@ function App() {
         <LeftSidebar userName={User.name} profilePhoto={User.profilePhoto} />
 
         {/* Main Content Area */}
-        <div className="flex-1 dark:bg-[#1c1c1c] bg-white">
+        <div className="flex-1 dark:bg-dark bg-white">
           {/* Top Bar */}
           <TopBar />
 

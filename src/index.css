@@ -13,6 +13,8 @@
     line-height: 20px;
     letter-spacing: 0;
   };
+
+  --color-dark: #1C1C1C;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

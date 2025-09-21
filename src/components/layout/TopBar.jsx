@@ -34,7 +34,7 @@ const TopBar = ({ path = "Dashboards / Default" }) => {
   }, [darkMode]);
 
   return (
-    <div className="flex justify-between h-16 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1C1C1C]">
+    <div className="flex justify-between h-16 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-dark">
       {/* Left side */}
       <div className="flex pl-4 gap-3">
         <button className="">
