@@ -12,12 +12,12 @@ const ProjectionCard = ({ data }) => {
   return (
     <div className="bg-gray-50 dark:bg-[#272727] rounded-2xl p-4 h-60">
       {/* Title */}
-      <h2 className="text-lg dark:text-white font-semibold text-gray-800 mb-4">
+      <h2 className="text-sm dark:text-white font-semibold text-dark mb-4">
         Projections vs Actuals
       </h2>
 
       {/* Chart */}
-      <ResponsiveContainer width="100%" height="75%">
+      <ResponsiveContainer width="95%" height="85%">
         <BarChart data={data} barGap={0} barCategoryGap={30}>
           {/* Grid lines */}
           <CartesianGrid vertical={false} stroke="#E5E7EB" />

@@ -6,7 +6,7 @@ const RevenueGraphCard = ({ data }) => {
 
   return (
     <div className="bg-[#F7F9FB] dark:bg-[#272727] p-6 rounded-2xl min-w-100 max-w-250">
-      <h2 className="dark:text-white text-semibold mb-4 font-sans">Revenue</h2>
+      <h2 className="dark:text-white font-semibold text-sm mb-4 font-sans">Revenue</h2>
       <ResponsiveContainer width="100%" height={280}>
         <LineChart data={data}>
           <Legend/>

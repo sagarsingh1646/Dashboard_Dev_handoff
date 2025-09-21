@@ -14,7 +14,7 @@ const TotalSalesCard = ({ data }) => {
 
   return (
     <div className="bg-[#F7F9FB] w-70 dark:bg-[#272727] p-4 rounded-2xl">
-      <h2 className="text-lg font-semibold mb-4 dark:text-white">Total Sales</h2>
+      <h2 className="text-sm font-semibold dark:text-white text-dark">Total Sales</h2>
       <ResponsiveContainer width="100%" height={220}>
         <PieChart>
           <Pie
@@ -59,7 +59,7 @@ const TotalSalesCard = ({ data }) => {
       </ResponsiveContainer>
 
       {/* Legend */}
-      <ul className="mt-4 space-y-2 text-sm">
+      <ul className="mt-1 space-y-2 text-xs font-normal">
         {data.map((item, index) => (
           <li key={index} className="flex justify-between">
             <span className="flex items-center">
@@ -67,9 +67,9 @@ const TotalSalesCard = ({ data }) => {
                 className="rounded-full w-3 h-3 inline-block"
                 style={{ backgroundColor: item.color }}
               />
-              <span className="font-light font-sans pl-3 dark:text-white">{item.name}</span>
+              <span className=" pb-2 pt-2  font-sans pl-3 dark:text-white">{item.name}</span>
             </span>
-            <span className="font-light font-sans dark:text-white">
+            <span className="pb-2 pt-2  font-sans dark:text-white">
               ${item.value.toFixed(2)}
             </span>
           </li>

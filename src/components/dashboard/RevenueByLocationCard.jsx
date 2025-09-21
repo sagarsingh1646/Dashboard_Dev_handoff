@@ -12,7 +12,7 @@ const RevenueByLocationCard = ({ data }) => {
 
   return (
     <div className="bg-[#F7F9FB] h-100 w-70 dark:bg-[#272727] p-4 rounded-2xl">
-      <h2 className="text-lg font-semibold mb-4 dark:text-white">
+      <h2 className="text-sm font-semibold mb-4 dark:text-white">
         Revenue by Location
       </h2>
 
@@ -28,7 +28,7 @@ const RevenueByLocationCard = ({ data }) => {
             return (
               <li key={index}>
                 {/* City & Value */}
-                <div className="flex justify-between text-sm dark:text-white mb-1">
+                <div className="flex justify-between text-xs font-normal dark:text-white mb-2">
                   <span>{location.city}</span>
                   <span>{location.value.toLocaleString()}K</span>
                 </div>
